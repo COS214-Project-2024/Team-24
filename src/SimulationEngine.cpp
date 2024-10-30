@@ -1,12 +1,11 @@
 #include "SimulationEngine.h"
 
 SimulationEngine::SimulationEngine() {
-	// TODO - implement SimulationEngine::SimulationEngine
-	throw "Not yet implemented";
+	instance = new SimulationEngine();
 }
 
-static SimulationEngine* SimulationEngine::getInstance() {
-	return this->instance;
+SimulationEngine* SimulationEngine::getInstance() {
+	return instance;
 }
 
 void SimulationEngine::simulationLoop() {
@@ -15,8 +14,7 @@ void SimulationEngine::simulationLoop() {
 }
 
 void SimulationEngine::stopSimulation() {
-	// TODO - implement SimulationEngine::stopSimulation
-	throw "Not yet implemented";
+	simulationIsActive = false;
 }
 
 void SimulationEngine::addObserver(Observer* obs) {
