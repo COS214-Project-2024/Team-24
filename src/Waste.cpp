@@ -2,6 +2,8 @@
 
 void Waste::distributeResources() {
 	// TODO - implement Waste::distributeResources
+
+	//This is the test comment for Vele and Mpumelelo
 	throw "Not yet implemented";
 }
 
