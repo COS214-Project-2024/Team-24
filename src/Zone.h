@@ -2,6 +2,7 @@
 #define ZONE_H
 
 #include "Building.h"
+#include "Point.h"
 #include <iostream>
 #include <vector>
 
