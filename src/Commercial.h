@@ -5,7 +5,11 @@
 
 class Commercial : Building {
 public:
-	void build();
+	Commercial();
+	Building* build();
+	void maintain();
+	void demolish();
+	void update(Command* cmd);
 };
 
 #endif

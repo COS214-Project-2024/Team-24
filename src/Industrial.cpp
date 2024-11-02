@@ -1,6 +1,20 @@
 #include "Industrial.h"
 
-void Industrial::build() {
-	// TODO - implement Industrial::build
-	throw "Not yet implemented";
+Industrial::Industrial(){}
+
+Building* Industrial::build() {
+	Building* ind = new Industrial();
+	return ind;
+}
+
+void maintain(){
+	throw "Not implemented yet";
+}
+
+void demolish(){
+	throw "Not implemented yet";
+}
+
+void update(Command* cmd){
+	cmd->execute();
 }
