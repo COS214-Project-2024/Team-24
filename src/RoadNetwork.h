@@ -1,15 +1,40 @@
 #ifndef ROADNETWORK_H
 #define ROADNETWORK_H
 
-#include <vector>
+#include <map>
+#include <string>
 #include "Road.h"
 
-class RoadNetwork {
+class RoadNetwork 
+{
 private:
-	std::vector<Road*> roads;
+    std::map<std::string, Road*> roads;
 
 public:
-	std::vector<Road*>::iterator getIterator();
+   
+    void addRoad(const std::string& name, Road* road) 
+	{
+        roads[name] = road;
+    }
+
+    
+    Road* retrieveRoad(const std::string& name) const 
+	{
+        auto it = roads.find(name);
+        return (it != roads.end()) ? it->second : nullptr;
+    }
+
+    
+    std::map<std::string, Road*>::iterator getIterator() 
+	{
+        return roads.begin();
+    }
+
+   
+    std::map<std::string, Road*>::const_iterator getConstIterator() const 
+	{
+        return roads.cbegin();
+    }
 };
 
 #endif
