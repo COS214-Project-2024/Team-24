@@ -1,8 +1,7 @@
 #include "PolicyMemento.h"
 
 PolicyMemento::PolicyMemento(int rate) {
-	// TODO - implement PolicyMemento::PolicyMemento
-	throw "Not yet implemented";
+	this->taxRate = rate;
 }
 
 int PolicyMemento::getTaxRate() {

@@ -1,4 +1,5 @@
 #include "SimulationEngine.h"
+#include <iostream>
 
 SimulationEngine::SimulationEngine() {
 	instance = new SimulationEngine();
@@ -18,13 +19,25 @@ void SimulationEngine::stopSimulation() {
 }
 
 void SimulationEngine::addObserver(Observer* obs) {
-	// TODO - implement SimulationEngine::addObserver
-	throw "Not yet implemented";
+	for (Observer* observer : observers){
+		if (obs == observer){
+			std::cout << "This observer already exists." << std::endl;
+			return;
+		}
+	}
+
+	observers.push_back(obs);
 }
 
 void SimulationEngine::removeObserver(Observer* obs) {
-	// TODO - implement SimulationEngine::removeObserver
-	throw "Not yet implemented";
+	auto it = std::find(observers.begin(), observers.end(), obs);
+	if (it != observers.end()){
+        observers.erase(it);
+    }
+
+	else{
+		std::cout << "This observer does not exist." << std::endl;
+	}
 }
 
 void SimulationEngine::notify(Command* cmd) {

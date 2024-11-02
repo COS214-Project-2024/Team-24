@@ -6,27 +6,27 @@
 #include "TaxStrategy.h"
 #include "Utility.h"
 #include "Citizen.h"
+#include "Crisis.h"
+#include "Budget.h"
 #include <vector>
 
 class Government : Observer {
 private:
 	PolicyMemento* policy;
 	TaxStrategy* taxStrategy;
-	double reliability;
-	Utility* utilities;
-	std::vector<Citizen*> citizens;
-	int powerValue;
-	int waterValue;
-	int wasteValue;
-	int sewageValue;
-	int population;
+	Budget* budget;
+	std::vector<PolicyMemento*> policyHistory;
 
 public:
 	void setPolicy(int rate);
 
 	void restorePolicy(PolicyMemento* memento);
 
-	void improveResource(std::string resource);
+	void adjustBudget();
+
+	void implementPolicy(std::string policy);
+
+	void handleCrisis(Crisis* crisis);
 };
 
 #endif

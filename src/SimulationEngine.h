@@ -4,10 +4,12 @@
 #include <vector>
 #include "Observer.h"
 #include "Command.h"
+#include "Utility.h"
 
 class SimulationEngine {
 private:
 	std::vector<Observer*> observers;
+	Utility* util;
 
 	static SimulationEngine* instance;
 	bool simulationIsActive;
