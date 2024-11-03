@@ -65,5 +65,5 @@ Road* ConcreteIterator::getRoad()
 
 bool ConcreteIterator::isDone() const
 {
-    return currRoad == nullptr || traversedRoads.size() == roadNetwork->roads.size();
+    return  traversedRoads.size() == roadNetwork->roads.size();
 }

@@ -16,7 +16,7 @@ class ConcreteIterator : public Iterator
         void first();
         void next();
         Road* getRoad();
-        bool isDone() const;
+        bool isDone();
 };
 
 #endif

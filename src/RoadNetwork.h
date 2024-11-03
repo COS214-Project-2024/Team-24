@@ -9,24 +9,17 @@
 
 class RoadNetwork 
 {
-private:
-    std::map<std::string, Road*> roads;
+    private:
+        std::map<std::string, Road*> roads;
 
-public:
+    public:
 
-    void addRoad(const std::string& name, Road* road) 
-    {
-        roads[name] = road;
-    }
+        void addRoad(const std::string& name, Road* road);
+        Road* retrieveRoad(const std::string& name);
+        ConcreteIterator* spawnIt();
 
-    Road* retrieveRoad(const std::string& name) const 
-    {
-        auto it = roads.find(name);
-        return (it != roads.end()) ? it->second : nullptr;
-    }
-
-    friend class Iterator;
-    friend class ConcreteIterator;
+        friend class Iterator;
+        friend class ConcreteIterator;
 
 };
 
