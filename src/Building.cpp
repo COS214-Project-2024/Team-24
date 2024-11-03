@@ -1,6 +1,6 @@
 #include "Building.h"
 
-string Building::getType() {
+std::string Building::getType() {
 	// TODO - implement Building::getType
 	throw "Not yet implemented";
 }

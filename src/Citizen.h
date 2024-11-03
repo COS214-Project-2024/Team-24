@@ -16,7 +16,9 @@ protected:
 public:
 	virtual Citizen* clone() = 0;
 
-	virtual void update(Command* cmd) = 0;
+	void update(Command* cmd) override {
+        cmd->execute();
+    }
 
 	int issueComplaint();
 };

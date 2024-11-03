@@ -5,7 +5,8 @@
 
 class Observer {
 public:
-	virtual void update(Command* cmd) = 0;
+    virtual void update(Command* cmd) = 0;
+    virtual ~Observer() = default;
 };
 
 #endif

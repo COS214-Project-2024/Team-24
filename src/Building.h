@@ -14,6 +14,11 @@ public:
 	virtual void build() = 0;
 
 	std::string getType();
+	
+	void update(Command* cmd) override {
+        // Implement the response to the command
+        cmd->execute();
+    }
 };
 
 #endif

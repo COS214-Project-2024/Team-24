@@ -1,4 +1,6 @@
 #include "SimulationEngine.h"
+#include <stdexcept> 
+#include <algorithm>
 
 SimulationEngine::SimulationEngine() {
 	instance = new SimulationEngine();
@@ -18,16 +20,22 @@ void SimulationEngine::stopSimulation() {
 }
 
 void SimulationEngine::addObserver(Observer* obs) {
-	// TODO - implement SimulationEngine::addObserver
-	throw "Not yet implemented";
+    observers.push_back(obs);
 }
 
 void SimulationEngine::removeObserver(Observer* obs) {
-	// TODO - implement SimulationEngine::removeObserver
-	throw "Not yet implemented";
-}
+	observers.erase(std::remove(observers.begin(), observers.end(), obs), observers.end());
+};
 
 void SimulationEngine::notify(Command* cmd) {
-	// TODO - implement SimulationEngine::notify
-	throw "Not yet implemented";
+    if (cmd == NULL) {
+        throw std::invalid_argument("Command cannot be NULL");
+    }
+
+    for (size_t i = 0; i < observers.size(); ++i) {
+        Observer* obs = observers[i];
+        if (obs != NULL) {
+            obs->update(cmd);
+        }
+    }
 }
