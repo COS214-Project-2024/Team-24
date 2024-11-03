@@ -6,7 +6,7 @@
 class Residential : Building {
 public:
 	Residential();
-	Building* build();
+	void build();
 	void maintain();
 	void demolish();
 	void update(Command* cmd);

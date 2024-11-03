@@ -2,19 +2,21 @@
 
 Industrial::Industrial(){}
 
-Building* Industrial::build() {
-	Building* ind = new Industrial();
-	return ind;
+void Industrial::build() {
+	BuildingState* newState = new Construction();
+	Building::setState(newState);
 }
 
-void maintain(){
-	throw "Not implemented yet";
+void Industrial::maintain(){
+	BuildingState* newState = new Good();
+	Building::setState(newState);
 }
 
-void demolish(){
-	throw "Not implemented yet";
+void Industrial::demolish(){
+	BuildingState* newState = new Bad();
+	Building::setState(newState);
 }
 
-void update(Command* cmd){
+void Industrial::update(Command* cmd){
 	cmd->execute();
 }

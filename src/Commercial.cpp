@@ -2,19 +2,21 @@
 
 Commercial::Commercial(){}
 
-Building* Commercial::build() {
-	Building* com = new Commercial();
-	return com;
+void Commercial::build() {
+	BuildingState* newState = new Construction();
+	Building::setState(newState);
 }
 
-void maintain(){
-	throw "Not implemented yet";
+void Commercial::maintain(){
+	BuildingState* newState = new Good();
+	Building::setState(newState);
 }
 
-void demolish(){
-	throw "Not implemented yet";
+void Commercial::demolish(){
+	BuildingState* newState = new Bad();
+	Building::setState(newState);
 }
 
-void update(Command* cmd){
+void Commercial::update(Command* cmd){
 	cmd->execute();
 }

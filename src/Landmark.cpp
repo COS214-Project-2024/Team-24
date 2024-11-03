@@ -2,19 +2,21 @@
 
 Landmark::Landmark(){}
 
-Building* Landmark::build() {
-	Building* land = new Landmark();
-	return land;
+void Landmark::build() {
+	BuildingState* newState = new Construction();
+	Building::setState(newState);
 }
 
-void maintain(){
-	throw "Not implemented yet";
+void Landmark::maintain(){
+	BuildingState* newState = new Good();
+	Building::setState(newState);
 }
 
-void demolish(){
-	throw "Not implemented yet";
+void Landmark::demolish(){
+	BuildingState* newState = new Bad();
+	Building::setState(newState);
 }
 
-void update(Command* cmd){
+void Landmark::update(Command* cmd){
 	cmd->execute();
 }

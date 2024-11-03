@@ -6,7 +6,7 @@
 class Commercial : Building {
 public:
 	Commercial();
-	Building* build();
+	void build();
 	void maintain();
 	void demolish();
 	void update(Command* cmd);

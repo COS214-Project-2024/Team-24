@@ -6,7 +6,7 @@
 class Industrial : Building {
 public:
 	Industrial();
-	Building* build();
+	void build();
 	void maintain();
 	void demolish();
 	void update(Command* cmd);

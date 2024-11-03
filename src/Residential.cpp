@@ -2,17 +2,19 @@
 
 Residential::Residential(){}
 
-Building* Residential::build() {
-	Building* res = new Residential();
-	return res;
+void Residential::build() {
+	BuildingState* newState = new Construction();
+	Building::setState(newState);
 }
 
 void Residential::maintain(){
-	throw "Not implemented Yet";
+	BuildingState* newState = new Good();
+	Building::setState(newState);
 }
 
 void Residential::demolish(){
-	throw "Not implemented Yet";
+	BuildingState* newState = new Bad();
+	Building::setState(newState);
 }
 
 void Residential::update(Command* cmd){

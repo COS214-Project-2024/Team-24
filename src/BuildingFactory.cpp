@@ -3,22 +3,26 @@
 Building* BuildingFactory::createBuilding(const std::string& type) {
 	if (type == "Residential"){
 		Residential* res;
-		return res->build();
+		res->build();
+		return res;
 	}
 
 	else if (type == "Commercial"){
 		Commercial* com;
-		return com->build();
+		com->build();
+		return com;
 	}
 
 	else if (type == "Industrial"){
 		Industrial* ind;
-		return ind->build();
+		ind->build();
+		return ind;
 	}
 
 	else if (type == "Landmark"){
 		Landmark* land;
-		return land->build();
+		land->build();
+		return land;
 	}
 
 	else{

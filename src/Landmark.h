@@ -6,7 +6,7 @@
 class Landmark : Building {
 public:
 	Landmark();
-	Building* build();
+	void build();
 	void maintain();
 	void demolish();
 	void update(Command* cmd);
