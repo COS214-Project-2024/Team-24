@@ -1,6 +1,6 @@
 #include "LowIncomeTaxStrategy.h"
+#include <iostream>
 
 double LowIncomeTaxStrategy::calclulateTax() {
-	// TODO - implement LowIncomeTaxStrategy::calclulateTax
-	throw "Not yet implemented";
+	std::cout << "Low income tax has been applied" << std::endl;
 }
