@@ -9,11 +9,10 @@ class MaintenanceVisitor : public BuildingVisitor
 {
     
     public:
-        void visitIndustrial();
-        void visitResidential();
-        void visitCommercial();
-        void visitLandmark();
-
+        void visitIndustrial(Industrial* building);
+        void visitResidential(Residential* building);
+        void visitCommercial(Commercial* building);
+        void visitLandmark(Landmark* building);
 };
 
 #endif
