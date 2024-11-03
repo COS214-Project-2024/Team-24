@@ -8,12 +8,13 @@
 class ConcreteIterator : public Iterator 
 {
 
-    public:
 
+    protected:
+        Road* current();
+    public:
         ConcreteIterator(RoadNetwork* network);
         void first();
         void next();
-        Road* current();
         Road* getRoad();
         bool isDone() const;
 };
