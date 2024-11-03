@@ -12,7 +12,6 @@ protected:
 
 public:
 	virtual void build() = 0;
-
 	std::string getType();
 };
 
