@@ -11,6 +11,10 @@
 #include "Command.h"
 #include "BuildingAttributeFactory.h"
 #include "BuildingState.h"
+#include "Colleague.h"
+#include "CityManager.h"
+#include <string>
+#include <iostream>
 
 class Building {
 protected:
@@ -43,6 +47,12 @@ public:
     ResourceManager* getResourceManager() const;   // Get the resource manager of the building
     const std::vector<Citizen*>& getCitizens() const; // Get the citizens associated with the building
     BuildingAttributes* getAttributes() const;     // Get the shared attributes
+
+    void Building::reportEvent(const std::string& event);
+
+    void receiveNotification(const std::string& message) override;
+
+    void update(Command* cmd) override;
 };
 
 #endif // BUILDING_H

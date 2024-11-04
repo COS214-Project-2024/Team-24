@@ -1,15 +1,25 @@
 #ifndef ROADNETWORK_H
 #define ROADNETWORK_H
 
-#include <vector>
+#include <map>
+#include <string>
 #include "Road.h"
+#include "Colleague.h"
+#include "ConcreteIterator.h"
+#include "CityManager.h"
 
-class RoadNetwork {
+class RoadNetwork : public Colleague {
 private:
-	std::vector<Road*> roads;
+    std::map<std::string, Road*> roads;
 
 public:
-	std::vector<Road*>::iterator getIterator();
+    RoadNetwork(CityManager* mediator);
+    void addRoad(const std::string& name, Road* road);
+    Road* retrieveRoad(const std::string& name);
+    ConcreteIterator* spawnIt();
+    void RoadNetwork::reportEvent(const std::string& event) override;
+
+    void receiveNotification(const std::string& message) override;
 };
 
 #endif
