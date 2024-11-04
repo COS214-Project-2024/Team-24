@@ -3,11 +3,16 @@
 
 #include "Observer.h"
 #include "BuildingState.h"
-#include "string"
+#include <string>
+#include <iostream>
+
 using namespace std;
 
 
 class BuildingVisitor;
+class MaintenanceVisitor;
+class InspectionVisitor;
+
 class Building : Observer {
 protected:
 	BuildingState* state;
@@ -15,7 +20,7 @@ protected:
 
 public:
 	virtual void build() = 0;
-	std::string getType();
+	std::string getBuildingType();
 	virtual void accept(BuildingVisitor* visitor) = 0;
 	virtual void maintain() = 0;
 	virtual void inspect() = 0;
