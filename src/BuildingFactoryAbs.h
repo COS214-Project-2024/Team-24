@@ -10,7 +10,7 @@ private:
 public:
 	virtual Building* createBuilding(const std::string& type) = 0;
 
-	void produce();
+	void produce(const std::string& type);
 };
 
 #endif

@@ -1,6 +1,5 @@
 #include "BuildingFactoryAbs.h"
 
-void BuildingFactoryAbs::produce() {
-	// TODO - implement BuildingFactoryAbs::produce
-	throw "Not yet implemented";
+void BuildingFactoryAbs::produce(const std::string& type) {
+	building = createBuilding(type);
 }
