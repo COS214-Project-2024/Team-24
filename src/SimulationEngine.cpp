@@ -1,10 +1,10 @@
 #include "SimulationEngine.h"
 
-SimulationEngine::SimulationEngine() {
+SimulationEngine::SimulationEngine(){
 	instance = new SimulationEngine();
 }
 
-SimulationEngine* SimulationEngine::getInstance() {
+SimulationEngine* SimulationEngine::getInstance(){
 	return instance;
 }
 

@@ -2,7 +2,7 @@
 
 Industrial::Industrial(){}
 
-void Industrial::build() {
+void Industrial::build(){
 	BuildingState* newState = new UnderConstruction();
 	Building::setState(newState);
 }

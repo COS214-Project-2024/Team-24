@@ -2,7 +2,7 @@
 
 Landmark::Landmark(){}
 
-void Landmark::build() {
+void Landmark::build(){
 	BuildingState* newState = new UnderConstruction();
 	Building::setState(newState);
 }
