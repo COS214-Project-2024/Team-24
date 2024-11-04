@@ -3,11 +3,11 @@
 
 #include <vector>
 #include <string>
-#include "Building.h"
-#include "Industrial.h"
-#include "Residential.h"
-#include "Commercial.h"
-#include "Landmark.h"
+
+class Industrial;
+class Residential;
+class Commercial;
+class Landmark;
 
 class BuildingVisitor
 {
