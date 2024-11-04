@@ -2,7 +2,7 @@
 
 Residential::Residential(){}
 
-void Residential::build() {
+void Residential::build(){
 	BuildingState* newState = new Construction();
 	Building::setState(newState);
 }
