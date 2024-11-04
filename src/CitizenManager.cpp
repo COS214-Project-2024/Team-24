@@ -17,5 +17,14 @@ void CitizenManager::handleCitizenNeeds()
 
 double CitizenManager::calculateHappiness()
 {
-    return 0;
+    int total;
+    int count;
+
+    for (Citizen* citi: citizens)
+    {
+        count++;
+        total += citi->getSatisfaction();
+    }
+
+    return total/count;
 }
