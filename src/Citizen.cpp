@@ -1,27 +1,5 @@
 #include "Citizen.h"
-#include <chrono>
-
-Citizen::Citizen(double income)
-{
-	this->income = income;
-
-	auto now = std::chrono::system_clock::now();
-    auto unix_timestamp = std::chrono::duration_cast<std::chrono::seconds>(now.time_since_epoch()).count();
-    
-	this->id = unix_timestamp;
-
-	this->complaints = new int[4];
-	this->deliveredResources = new int[4];
-}
-
-Citizen::~Citizen()
-{
-	delete[] this->complaints;
-	delete[] this->deliveredResources;
-
-	this->complaints = NULL;
-	this->deliveredResources = NULL;
-}
+#include <iostream>
 
 int Citizen::issueComplaint() {
 	//have an array that corresponds to the resource they get, 0-water, 1-electricity, 2-sewage, 3-waste, 4-none(all zero), 5-all (all equal but not zero)
@@ -86,4 +64,21 @@ int Citizen::getSatisfaction()
 long Citizen::getID()
 {
 	return this->id;
+}
+
+void Citizen::update(Command* cmd) {
+    // Executes the given command, potentially updating satisfaction or other attributes
+    cmd->execute();
+}
+
+void Citizen::receiveNotification(const std::string& message) {
+    std::cout << "Citizen (" << fullName << ") received: " << message << std::endl;
+}
+
+void Citizen::reportEvent(const std::string& event) {
+    if (mediator) {
+        mediator->notify(event, this);  // Ensure mediator is defined
+    } else {
+        std::cerr << "Mediator is not set for Government." << std::endl;
+    }
 }
