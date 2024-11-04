@@ -1,6 +1,6 @@
 #include "BuildingFactory.h"
 
-Building* BuildingFactory::createBuilding(const std::string& type) {
+Building* BuildingFactory::createBuilding(const std::string& type){
 	if (type == "Residential"){
 		Residential* res;
 		res->build();
