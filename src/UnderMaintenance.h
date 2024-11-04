@@ -17,9 +17,9 @@ class UnderMaintenance : public BuildingState {
 
 public:
     UnderMaintenance();
-    void enter(Building* building) override;    // Logic for entering the UnderMaintenance state
-    void exit(Building* building) override;     // Logic for exiting the UnderMaintenance state
-    void update(Building* building) override;   // Logic to update the UnderMaintenance state
+    void enter(Building* building);    // Logic for entering the UnderMaintenance state
+    void exit(Building* building);     // Logic for exiting the UnderMaintenance state
+    void update(Building* building);   // Logic to update the UnderMaintenance state
 };
 
 #endif // UNDER_MAINTENANCE_H

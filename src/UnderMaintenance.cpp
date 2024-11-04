@@ -3,16 +3,19 @@
 
 UnderMaintenance::UnderMaintenance() : maintenanceProgress(0), maintenanceCostPerTick(15) {}
 
-    void UnderMaintenance::enter(Building* building) {
+    void UnderMaintenance::enter(Building* building) 
+    {
         std::cout << "Building type: " << building->getBuildingType() << " is now under maintenance." << std::endl;
         building->getResourceManager()->addResources("maintenance", maintenanceCostPerTick);
     }
 
-    void UnderMaintenance::exit(Building* building) {
+    void UnderMaintenance::exit(Building* building) 
+    {
         std::cout << "Maintenance complete for building type: " << building->getBuildingType() << std::endl;
     }
 
-    void UnderMaintenance::update(Building* building) {
+    void UnderMaintenance::update(Building* building) 
+    {
         if (!building->getResourceManager()->checkResourceAvailability()) {
             std::cout << "Insufficient resources for maintenance." << std::endl;
             return;
