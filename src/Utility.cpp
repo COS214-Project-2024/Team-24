@@ -17,3 +17,7 @@ void Utility::reportEvent(const std::string& event) {
         std::cerr << "Mediator is not set for Utility." << std::endl;
     }
 }
+
+void Utility::receiveNotification(const std::string& message) {
+	std::cout << "Utility received: " << message << std::endl;
+}

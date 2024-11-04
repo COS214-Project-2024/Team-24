@@ -20,8 +20,19 @@ void Government::receiveNotification(const std::string& message) {
 }
 void Government::reportEvent(const std::string& event) {
     if (mediator) {
-        mediator->notify(event, this);  // Ensure mediator is defined
+        mediator->notify(event, this);
     } else {
         std::cerr << "Mediator is not set for Government." << std::endl;
+    }
+}
+
+void Government::update(Command* cmd) {
+    // Execute the command
+    cmd->execute();
+}
+
+void Government::handleRequest(const std::string& request) {
+    if (handlerChain) {
+        handlerChain->handleRequest(request);
     }
 }
