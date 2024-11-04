@@ -3,7 +3,14 @@
 
 class Command {
 public:
-	virtual void execute() = 0;
+    // Virtual destructor for proper cleanup of derived classes
+    virtual ~Command() {}
+
+    // Execute the command
+    virtual void execute() = 0;
+
+    // Undo the command
+    virtual void undo() = 0;
 };
 
-#endif
+#endif // COMMAND_H
