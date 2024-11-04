@@ -1,23 +1,41 @@
 #include "Government.h"
+#include <iostream>
+#include <vector>
 
 void Government::setPolicy(int rate) {
-	// TODO - implement Government::setPolicy
-	throw "Not yet implemented";
+	policy = new PolicyMemento(rate);
+
+	for (PolicyMemento* policyMomento : policyHistory){
+		if (policy == policyMomento){
+			std::cout << "This policy already exists." << std::endl;
+			return;
+		}
+	}
+
+	policyHistory.push_back(policy);
 }
 
 void Government::restorePolicy(PolicyMemento* memento) {
-	// TODO - implement Government::restorePolicy
+	policy = memento;
+}
+
+void Government::adjustBudget(){
+	// TODO - implement Government::improveResource
 	throw "Not yet implemented";
 }
 
-void Government::improveResource(std::string resource) {
-	// TODO - implement Government::improveResource
+void Government::implementPolicy(std::string policy){
+	throw "Not yet implemented";
+}
+
+void Government::handleCrisis(Crisis* crisis){
 	throw "Not yet implemented";
 }
 
 void Government::receiveNotification(const std::string& message) {
     std::cout << "Government received: " << message << std::endl;
 }
+
 void Government::reportEvent(const std::string& event) {
     if (mediator) {
         mediator->notify(event, this);

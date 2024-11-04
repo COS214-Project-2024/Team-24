@@ -1,4 +1,5 @@
 #include "SimulationEngine.h"
+#include <iostream>
 #include <stdexcept> 
 #include <algorithm>
 
@@ -20,12 +21,26 @@ void SimulationEngine::stopSimulation() {
 }
 
 void SimulationEngine::addObserver(Observer* obs) {
-    observers.push_back(obs);
+	for (Observer* observer : observers){
+		if (obs == observer){
+			std::cout << "This observer already exists." << std::endl;
+			return;
+		}
+	}
+
+	observers.push_back(obs);
 }
 
 void SimulationEngine::removeObserver(Observer* obs) {
-	observers.erase(std::remove(observers.begin(), observers.end(), obs), observers.end());
-};
+	auto it = std::find(observers.begin(), observers.end(), obs);
+	if (it != observers.end()){
+        observers.erase(it);
+    }
+
+	else{
+		std::cout << "This observer does not exist." << std::endl;
+	}
+}
 
 void SimulationEngine::notify(Command* cmd) {
     if (cmd == NULL) {
