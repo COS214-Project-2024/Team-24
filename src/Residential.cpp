@@ -3,17 +3,17 @@
 Residential::Residential(){}
 
 void Residential::build() {
-	BuildingState* newState = new Construction();
+	BuildingState* newState = new UnderConstruction();
 	Building::setState(newState);
 }
 
 void Residential::maintain(){
-	BuildingState* newState = new Good();
+	BuildingState* newState = new UnderMaintainence();
 	Building::setState(newState);
 }
 
 void Residential::demolish(){
-	BuildingState* newState = new Bad();
+	BuildingState* newState = new Abandoned();
 	Building::setState(newState);
 }
 
