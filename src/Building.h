@@ -11,6 +11,15 @@
 #include "Command.h"
 #include "BuildingAttributeFactory.h"
 #include "BuildingState.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
+
+
+class BuildingVisitor;
+class MaintenanceVisitor;
+class InspectionVisitor;
 
 class Building {
 protected:
@@ -43,6 +52,7 @@ public:
     ResourceManager* getResourceManager() const;   // Get the resource manager of the building
     const std::vector<Citizen*>& getCitizens() const; // Get the citizens associated with the building
     BuildingAttributes* getAttributes() const;     // Get the shared attributes
+	virtual void inspect() = 0;
 };
 
 #endif // BUILDING_H
