@@ -3,21 +3,30 @@
 
 #include "Observer.h"
 #include "BuildingState.h"
-#include "string"
+#include "Colleague.h"
+#include "CityManager.h"
+#include <string>
+#include <iostream>
 
-class Building : Observer {
+class Building : public Colleague, public Observer {
 protected:
-	BuildingState* state;
-	std::string buildingType;
+    BuildingState* state;
+    std::string buildingType;
+    
 
 public:
-	virtual void build() = 0;
-	std::string getType();
-	
-	void update(Command* cmd) override {
-        // Implement the response to the command
-        cmd->execute();
-    }
+    Building(CityManager* mediator, const std::string& type) 
+        : Colleague(mediator), buildingType(type), state(nullptr) {}
+
+    virtual void build() = 0;
+
+    std::string getType() const;
+
+    void Building::reportEvent(const std::string& event);
+
+    void receiveNotification(const std::string& message) override;
+
+    void update(Command* cmd) override;
 };
 
 #endif

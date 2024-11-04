@@ -14,3 +14,14 @@ void Government::improveResource(std::string resource) {
 	// TODO - implement Government::improveResource
 	throw "Not yet implemented";
 }
+
+void Government::receiveNotification(const std::string& message) {
+    std::cout << "Government received: " << message << std::endl;
+}
+void Government::reportEvent(const std::string& event) {
+    if (mediator) {
+        mediator->notify(event, this);  // Ensure mediator is defined
+    } else {
+        std::cerr << "Mediator is not set for Government." << std::endl;
+    }
+}

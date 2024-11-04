@@ -4,23 +4,22 @@
 #include <map>
 #include <string>
 #include "Road.h"
-#include "Iterator.h"
+#include "Colleague.h"
 #include "ConcreteIterator.h"
+#include "CityManager.h"
 
-class RoadNetwork 
-{
-    private:
-        std::map<std::string, Road*> roads;
+class RoadNetwork : public Colleague {
+private:
+    std::map<std::string, Road*> roads;
 
-    public:
+public:
+    RoadNetwork(CityManager* mediator);
+    void addRoad(const std::string& name, Road* road);
+    Road* retrieveRoad(const std::string& name);
+    ConcreteIterator* spawnIt();
+    void RoadNetwork::reportEvent(const std::string& event) override;
 
-        void addRoad(const std::string& name, Road* road);
-        Road* retrieveRoad(const std::string& name);
-        ConcreteIterator* spawnIt();
-
-        friend class Iterator;
-        friend class ConcreteIterator;
-
+    void receiveNotification(const std::string& message) override;
 };
 
 #endif

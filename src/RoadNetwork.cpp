@@ -16,3 +16,15 @@ ConcreteIterator* RoadNetwork::spawnIt()
 	ConcreteIterator* it = new ConcreteIterator(this);
 	return it;
 }
+
+void RoadNetwork::receiveNotification(const std::string& message) {
+    std::cout << "RoadNetwork received: " << message << std::endl;
+}
+
+void RoadNetwork::reportEvent(const std::string& event) {
+    if (mediator) {
+        mediator->notify(event, this);  // Ensure mediator is defined
+    } else {
+        std::cerr << "Mediator is not set for Road Network." << std::endl;
+    }
+}

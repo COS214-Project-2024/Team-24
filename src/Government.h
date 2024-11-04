@@ -6,10 +6,11 @@
 #include "TaxStrategy.h"
 #include "Utility.h"
 #include "Citizen.h"
+#include "Colleague.h"
 #include <vector>
 #include <string>
 
-class Government : public Observer {
+class Government : public Colleague, public Observer {
 private:
     PolicyMemento* policy;
     TaxStrategy* taxStrategy;
@@ -23,12 +24,13 @@ private:
     int population;
 
 public:
+    Government(CityManager* mediator);
     void setPolicy(int rate);
     void restorePolicy(PolicyMemento* memento);
-    void improveResource(std::string resource);
-    void update(Command* cmd) override {
-        cmd->execute();
-    }
+    void Government::improveResource(std::string resource);
+    void receiveNotification(const std::string& message) override;
+    void update(Command* cmd) override;
+    void Government::reportEvent(const std::string& event) override;
 };
 
 #endif
