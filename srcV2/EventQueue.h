@@ -6,32 +6,49 @@
 #include <memory>
 #include "Command.h"
 
+/**
+ * @class EventQueue
+ * @brief Manages a queue of commands with undo functionality.
+ *
+ * The EventQueue class stores commands to be executed in sequence and
+ * supports undo operations for the last executed command.
+ */
 class EventQueue {
 public:
-    // Constructor and destructor
+    /// Constructor to initialize the event queue.
     EventQueue();
+
+    /// Destructor.
     ~EventQueue() = default;
 
-    // Prevent copying
+    /// Prevents copying of EventQueue.
     EventQueue(const EventQueue&) = delete;
     EventQueue& operator=(const EventQueue&) = delete;
 
-    // Event management
+    /**
+     * @brief Adds a new event command to the queue.
+     * @param cmd The command to be added.
+     */
     void addEvent(std::unique_ptr<Command> cmd);
+
+    /// Processes all commands in the event queue.
     void processEvents();
+
+    /// Undoes the last executed event in the history.
     void undoLastEvent();
-    
-    // Queue information
+
+    /// Checks if the event queue is empty.
     bool isEmpty() const { return events.empty(); }
+
+    /// Returns the size of the event queue.
     size_t getQueueSize() const { return events.size(); }
+
+    /// Returns the size of the event history for undo purposes.
     size_t getHistorySize() const { return eventHistory.size(); }
 
 private:
-    // Queue of commands to be processed (using smart pointers)
-    std::queue<std::unique_ptr<Command>> events;
-
-    // History of executed commands for undo functionality
-    std::vector<std::unique_ptr<Command>> eventHistory;
+    std::queue<std::unique_ptr<Command>> events; ///< Queue of commands to be processed.
+    std::vector<std::unique_ptr<Command>> eventHistory; ///< History of executed commands.
 };
 
 #endif // EVENTQUEUE_H

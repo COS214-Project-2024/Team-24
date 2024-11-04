@@ -3,19 +3,18 @@
 
 #include "TaxStrategy.h"
 
+/**
+ * @class HighIncomeTaxStrategy
+ * @brief Tax strategy for individuals with high income.
+ *
+ * This strategy applies a higher tax rate to individuals exceeding
+ * a defined income threshold, aiming to increase revenue from high earners.
+ */
 class HighIncomeTaxStrategy : public TaxStrategy {
 private:
-    double taxRate;
-    double incomeThreshold;
+    double taxRate;            ///< Tax rate for high income earners.
+    double incomeThreshold;    ///< Minimum income to qualify for high income tax.
 
 public:
-    explicit HighIncomeTaxStrategy(double rate = 0.35) 
-        : taxRate(rate)
-        , incomeThreshold(100000.0) {}
-
-    double calculateTax(double income) const override;
-    bool isValidIncome(double income) const override;
-    std::string getStrategyName() const override { return "High Income Tax"; }
-};
-
-#endif
+    /**
+     * @brief Constructs a Hig
