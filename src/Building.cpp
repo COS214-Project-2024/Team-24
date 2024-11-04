@@ -1,6 +1,6 @@
 #include "Building.h"
 
-string Building::getType() 
+string Building::getBuildingType() 
 {
 	return buildingType;
 }
