@@ -1,1 +1,35 @@
+# .github/workflows/ci-cd.yml
+name: CI/CD Pipeline
 
+on:
+  # Trigger this workflow on push or pull request to the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Specifies the OS for the runner
+
+    steps:
+      # Step 1: Check out the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up C++ environment (with the necessary compiler version)
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y g++ make cppcheck  # Adds cppcheck for linting
+
+      # Step 3: Lint the code (using cppcheck)
+      - name: Run Linter (cppcheck)
+        run: cppcheck --enable=all --error-exitcode=1 src  # Adjust 'src' to your source code directory
+
+      # Step 4: Build the application
+      - name: Build Application
+        run: make  # Assumes you have a Makefile in the root directory
+
+      # Step 5: Run Unit Tests
+      # Assuming the test executable is named 'test' and produced by the Makefile
+      - name: Run Tests
+        run: ./main  # Adjust 'test' to the name of your test executable
