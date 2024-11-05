@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/c/Users/velen/Music/Computer Science/2024/COS214/project/build/city_tests[1]_tests.cmake")
+  include("/mnt/c/Users/velen/Music/Computer Science/2024/COS214/project/build/city_tests[1]_tests.cmake")
+else()
+  add_test(city_tests_NOT_BUILT city_tests_NOT_BUILT)
+endif()
