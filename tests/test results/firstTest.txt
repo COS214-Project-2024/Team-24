@@ -1,0 +1,29 @@
+
+[==========] Running 6 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from BuildingTests
+[ RUN      ] BuildingTests.Creation
+[       OK ] BuildingTests.Creation (0 ms)
+[----------] 1 test from BuildingTests (0 ms total)
+
+[----------] 5 tests from BuildingTestFixture
+[ RUN      ] BuildingTestFixture.Condition
+[       OK ] BuildingTestFixture.Condition (0 ms)
+[ RUN      ] BuildingTestFixture.Location
+[       OK ] BuildingTestFixture.Location (0 ms)
+[ RUN      ] BuildingTestFixture.Lifecycle
+Building constructed at (1,1)
+Building demolished at (1,1)
+[       OK ] BuildingTestFixture.Lifecycle (0 ms)
+[ RUN      ] BuildingTestFixture.Resources
+Building constructed at (1,1)
+[       OK ] BuildingTestFixture.Resources (0 ms)
+[ RUN      ] BuildingTestFixture.Maintenance
+Building constructed at (1,1)
+Residential building maintained. New condition: 0.5
+[       OK ] BuildingTestFixture.Maintenance (0 ms)
+[----------] 5 tests from BuildingTestFixture (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 2 test suites ran. (1 ms total)
+[  PASSED  ] 6 tests.

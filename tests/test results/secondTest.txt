@@ -1,0 +1,58 @@
+
+[==========] Running 12 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from BuildingTests
+[ RUN      ] BuildingTests.Creation
+[       OK ] BuildingTests.Creation (0 ms)
+[----------] 1 test from BuildingTests (0 ms total)
+
+[----------] 5 tests from BuildingTestFixture
+[ RUN      ] BuildingTestFixture.Condition
+[       OK ] BuildingTestFixture.Condition (0 ms)
+[ RUN      ] BuildingTestFixture.Location
+[       OK ] BuildingTestFixture.Location (0 ms)
+[ RUN      ] BuildingTestFixture.Lifecycle
+Building constructed at (1,1)
+Building demolished at (1,1)
+[       OK ] BuildingTestFixture.Lifecycle (0 ms)
+[ RUN      ] BuildingTestFixture.Resources
+Building constructed at (1,1)
+[       OK ] BuildingTestFixture.Resources (0 ms)
+[ RUN      ] BuildingTestFixture.Maintenance
+Building constructed at (1,1)
+Residential building maintained. New condition: 0.5
+[       OK ] BuildingTestFixture.Maintenance (0 ms)
+[----------] 5 tests from BuildingTestFixture (0 ms total)
+
+[----------] 6 tests from CommercialTests
+[ RUN      ] CommercialTests.Creation
+[       OK ] CommercialTests.Creation (0 ms)
+[ RUN      ] CommercialTests.RevenueGeneration
+Building constructed at (1,1)
+Commercial building has 40 customers
+Commercial building generated 320 revenue
+[       OK ] CommercialTests.RevenueGeneration (0 ms)
+[ RUN      ] CommercialTests.CustomerTraffic
+Building constructed at (1,1)
+Commercial building has 40 customers
+Commercial building generated 320 revenue
+[       OK ] CommercialTests.CustomerTraffic (0 ms)
+[ RUN      ] CommercialTests.RetailEfficiency
+Building constructed at (1,1)
+Commercial building has 10 customers
+Commercial building generated 40 revenue
+Commercial building maintained. New condition: 0.69
+Commercial building has 19 customers
+Commercial building generated 104.88 revenue
+[       OK ] CommercialTests.RetailEfficiency (0 ms)
+[ RUN      ] CommercialTests.ResourceConsumption
+Building constructed at (1,1)
+[       OK ] CommercialTests.ResourceConsumption (0 ms)
+[ RUN      ] CommercialTests.VisitorAcceptance
+Building visitor destroyed
+[       OK ] CommercialTests.VisitorAcceptance (0 ms)
+[----------] 6 tests from CommercialTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 3 test suites ran. (1 ms total)
+[  PASSED  ] 12 tests.

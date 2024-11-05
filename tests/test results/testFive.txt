@@ -1,0 +1,135 @@
+[==========] Running 33 tests from 6 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from BuildingTests
+[ RUN      ] BuildingTests.Creation
+[       OK ] BuildingTests.Creation (0 ms)
+[----------] 1 test from BuildingTests (0 ms total)
+
+[----------] 5 tests from BuildingTestFixture
+[ RUN      ] BuildingTestFixture.Condition
+[       OK ] BuildingTestFixture.Condition (0 ms)
+[ RUN      ] BuildingTestFixture.Location
+[       OK ] BuildingTestFixture.Location (0 ms)
+[ RUN      ] BuildingTestFixture.Lifecycle
+Building constructed at (1,1)
+Building demolished at (1,1)
+[       OK ] BuildingTestFixture.Lifecycle (0 ms)
+[ RUN      ] BuildingTestFixture.Resources
+Building constructed at (1,1)
+[       OK ] BuildingTestFixture.Resources (0 ms)
+[ RUN      ] BuildingTestFixture.Maintenance
+Building constructed at (1,1)
+Residential building maintained. New condition: 0.5
+[       OK ] BuildingTestFixture.Maintenance (0 ms)
+[----------] 5 tests from BuildingTestFixture (0 ms total)
+
+[----------] 6 tests from CommercialTests
+[ RUN      ] CommercialTests.Creation
+[       OK ] CommercialTests.Creation (0 ms)
+[ RUN      ] CommercialTests.RevenueGeneration
+Building constructed at (1,1)
+Commercial building has 40 customers
+Commercial building generated 320 revenue
+[       OK ] CommercialTests.RevenueGeneration (0 ms)
+[ RUN      ] CommercialTests.CustomerTraffic
+Building constructed at (1,1)
+Commercial building has 40 customers
+Commercial building generated 320 revenue
+[       OK ] CommercialTests.CustomerTraffic (0 ms)
+[ RUN      ] CommercialTests.RetailEfficiency
+Building constructed at (1,1)
+Commercial building has 10 customers
+Commercial building generated 40 revenue
+Commercial building maintained. New condition: 0.69
+Commercial building has 19 customers
+Commercial building generated 104.88 revenue
+[       OK ] CommercialTests.RetailEfficiency (0 ms)
+[ RUN      ] CommercialTests.ResourceConsumption
+Building constructed at (1,1)
+[       OK ] CommercialTests.ResourceConsumption (0 ms)
+[ RUN      ] CommercialTests.VisitorAcceptance
+Building visitor destroyed
+[       OK ] CommercialTests.VisitorAcceptance (0 ms)
+[----------] 6 tests from CommercialTests (0 ms total)
+
+[----------] 7 tests from IndustrialTests
+[ RUN      ] IndustrialTests.Creation
+[       OK ] IndustrialTests.Creation (0 ms)
+[ RUN      ] IndustrialTests.Production
+Building constructed at (1,1)
+Industrial building produced 8 power units
+[       OK ] IndustrialTests.Production (0 ms)
+[ RUN      ] IndustrialTests.PollutionGeneration
+Building constructed at (1,1)
+Industrial building produced 8 power units
+[       OK ] IndustrialTests.PollutionGeneration (0 ms)
+[ RUN      ] IndustrialTests.ProductionEfficiency
+Building constructed at (1,1)
+Industrial building produced 4 power units
+Industrial building maintained. New condition: 0.68
+Industrial building produced 6.12 power units
+[       OK ] IndustrialTests.ProductionEfficiency (0 ms)
+[ RUN      ] IndustrialTests.ResourceConsumption
+Building constructed at (1,1)
+[       OK ] IndustrialTests.ResourceConsumption (0 ms)
+[ RUN      ] IndustrialTests.WasteGeneration
+Building constructed at (1,1)
+Industrial building produced 8 power units
+[       OK ] IndustrialTests.WasteGeneration (0 ms)
+[ RUN      ] IndustrialTests.VisitorAcceptance
+Building visitor destroyed
+[       OK ] IndustrialTests.VisitorAcceptance (0 ms)
+[----------] 7 tests from IndustrialTests (0 ms total)
+
+[----------] 7 tests from LandmarkTests
+[ RUN      ] LandmarkTests.Creation
+[       OK ] LandmarkTests.Creation (0 ms)
+[ RUN      ] LandmarkTests.TourismValue
+Building constructed at (1,1)
+Landmark maintained. New condition: 0.8
+[       OK ] LandmarkTests.TourismValue (0 ms)
+[ RUN      ] LandmarkTests.VisitorCount
+Building constructed at (1,1)
+Landmark has 1000 visitors today, generating $5000 in revenue
+[       OK ] LandmarkTests.VisitorCount (0 ms)
+[ RUN      ] LandmarkTests.MaintenanceImpact
+Building constructed at (1,1)
+Landmark has 500 visitors today, generating $2500 in revenue
+Landmark maintained. New condition: 0.795
+Landmark has 794 visitors today, generating $3970 in revenue
+[       OK ] LandmarkTests.MaintenanceImpact (0 ms)
+[ RUN      ] LandmarkTests.ResourceConsumption
+Building constructed at (1,1)
+[       OK ] LandmarkTests.ResourceConsumption (0 ms)
+[ RUN      ] LandmarkTests.HistoricalValue
+[       OK ] LandmarkTests.HistoricalValue (0 ms)
+[ RUN      ] LandmarkTests.VisitorAcceptance
+Building visitor destroyed
+[       OK ] LandmarkTests.VisitorAcceptance (0 ms)
+[----------] 7 tests from LandmarkTests (0 ms total)
+
+[----------] 7 tests from ZoneTests
+[ RUN      ] ZoneTests.Creation
+[       OK ] ZoneTests.Creation (0 ms)
+[ RUN      ] ZoneTests.BuildingPlacement
+[       OK ] ZoneTests.BuildingPlacement (0 ms)
+[ RUN      ] ZoneTests.BuildingCapacity
+[       OK ] ZoneTests.BuildingCapacity (0 ms)
+[ RUN      ] ZoneTests.BuildingRemoval
+[       OK ] ZoneTests.BuildingRemoval (0 ms)
+[ RUN      ] ZoneTests.ZoneUpdate
+Building constructed at (1,1)
+Residential satisfaction updated: 100%
+[       OK ] ZoneTests.ZoneUpdate (0 ms)
+[ RUN      ] ZoneTests.ZoneMaintenance
+Building constructed at (1,1)
+Residential building maintained. New condition: 0.7
+[       OK ] ZoneTests.ZoneMaintenance (0 ms)
+[ RUN      ] ZoneTests.VisitorPattern
+Building visitor destroyed
+[       OK ] ZoneTests.VisitorPattern (0 ms)
+[----------] 7 tests from ZoneTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 33 tests from 6 test suites ran. (2 ms total)
+[  PASSED  ] 33 tests.

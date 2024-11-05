@@ -1,0 +1,558 @@
+[==========] Running 100 tests from 14 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from BuildingTests
+[ RUN      ] BuildingTests.Creation
+[       OK ] BuildingTests.Creation (0 ms)
+[----------] 1 test from BuildingTests (0 ms total)
+
+[----------] 5 tests from BuildingTestFixture
+[ RUN      ] BuildingTestFixture.Condition
+[       OK ] BuildingTestFixture.Condition (0 ms)
+[ RUN      ] BuildingTestFixture.Location
+[       OK ] BuildingTestFixture.Location (0 ms)
+[ RUN      ] BuildingTestFixture.Lifecycle
+Building constructed at (1,1)
+Building demolished at (1,1)
+[       OK ] BuildingTestFixture.Lifecycle (0 ms)
+[ RUN      ] BuildingTestFixture.Resources
+Building constructed at (1,1)
+[       OK ] BuildingTestFixture.Resources (0 ms)
+[ RUN      ] BuildingTestFixture.Maintenance
+Building constructed at (1,1)
+Residential building maintained. New condition: 0.5
+[       OK ] BuildingTestFixture.Maintenance (0 ms)
+[----------] 5 tests from BuildingTestFixture (0 ms total)
+
+[----------] 4 tests from CityManagerTests
+[ RUN      ] CityManagerTests.Creation
+[       OK ] CityManagerTests.Creation (0 ms)
+[ RUN      ] CityManagerTests.ZoneManagement
+[       OK ] CityManagerTests.ZoneManagement (0 ms)
+[ RUN      ] CityManagerTests.BuildingPlacement
+[       OK ] CityManagerTests.BuildingPlacement (0 ms)
+[ RUN      ] CityManagerTests.Updates
+[       OK ] CityManagerTests.Updates (0 ms)
+[----------] 4 tests from CityManagerTests (0 ms total)
+
+[----------] 6 tests from CommercialTests
+[ RUN      ] CommercialTests.Creation
+[       OK ] CommercialTests.Creation (0 ms)
+[ RUN      ] CommercialTests.RevenueGeneration
+Building constructed at (1,1)
+Commercial building has 40 customers
+Commercial building generated 320 revenue
+[       OK ] CommercialTests.RevenueGeneration (0 ms)
+[ RUN      ] CommercialTests.CustomerTraffic
+Building constructed at (1,1)
+Commercial building has 40 customers
+Commercial building generated 320 revenue
+[       OK ] CommercialTests.CustomerTraffic (0 ms)
+[ RUN      ] CommercialTests.RetailEfficiency
+Building constructed at (1,1)
+Commercial building has 10 customers
+Commercial building generated 40 revenue
+Commercial building maintained. New condition: 0.69
+Commercial building has 19 customers
+Commercial building generated 104.88 revenue
+[       OK ] CommercialTests.RetailEfficiency (0 ms)
+[ RUN      ] CommercialTests.ResourceConsumption
+Building constructed at (1,1)
+[       OK ] CommercialTests.ResourceConsumption (0 ms)
+[ RUN      ] CommercialTests.VisitorAcceptance
+Building visitor destroyed
+[       OK ] CommercialTests.VisitorAcceptance (0 ms)
+[----------] 6 tests from CommercialTests (0 ms total)
+
+[----------] 8 tests from GovernmentStatisticsTests
+[ RUN      ] GovernmentStatisticsTests.BasicStatisticsTracking
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+[       OK ] GovernmentStatisticsTests.BasicStatisticsTracking (0 ms)
+[ RUN      ] GovernmentStatisticsTests.TaxRateTracking
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+[       OK ] GovernmentStatisticsTests.TaxRateTracking (0 ms)
+[ RUN      ] GovernmentStatisticsTests.ServiceLevelTracking
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Set education funding to 1000
+Set healthcare funding to 1000
+[       OK ] GovernmentStatisticsTests.ServiceLevelTracking (0 ms)
+[ RUN      ] GovernmentStatisticsTests.ApprovalRatingChanges
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Adjusted residential tax rate to 0.1
+[       OK ] GovernmentStatisticsTests.ApprovalRatingChanges (0 ms)
+[ RUN      ] GovernmentStatisticsTests.TreasuryTracking
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Adjusted residential tax rate to 0.05
+Collected 180 in taxes. New balance: 10180
+[       OK ] GovernmentStatisticsTests.TreasuryTracking (0 ms)
+[ RUN      ] GovernmentStatisticsTests.PolicyStatusTracking
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Policy 'Green Initiative' set to active
+[       OK ] GovernmentStatisticsTests.PolicyStatusTracking (0 ms)
+[ RUN      ] GovernmentStatisticsTests.MultipleUpdates
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Collected 180 in taxes. New balance: 10180
+Added data point for treasury_balance: 7180
+Added data point for approval_rating: 53
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Collected 180 in taxes. New balance: 7360
+Added data point for treasury_balance: 4360
+Added data point for approval_rating: 56
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Collected 180 in taxes. New balance: 4540
+Added data point for treasury_balance: 1540
+Added data point for approval_rating: 59
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+[       OK ] GovernmentStatisticsTests.MultipleUpdates (0 ms)
+[ RUN      ] GovernmentStatisticsTests.ServiceFundingEffects
+Statistics system initialized with max history size: 100
+Government established for Test City
+Added data point for treasury_balance: 10000
+Added data point for approval_rating: 50
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Set education funding to 2000
+[       OK ] GovernmentStatisticsTests.ServiceFundingEffects (0 ms)
+[----------] 8 tests from GovernmentStatisticsTests (2 ms total)
+
+[----------] 11 tests from GovernmentTests
+[ RUN      ] GovernmentTests.InitialState
+Statistics system initialized with max history size: 100
+Government established for Test City
+[       OK ] GovernmentTests.InitialState (0 ms)
+[ RUN      ] GovernmentTests.TaxRateAdjustment
+Statistics system initialized with max history size: 100
+Government established for Test City
+Adjusted residential tax rate to 0.06
+[       OK ] GovernmentTests.TaxRateAdjustment (0 ms)
+[ RUN      ] GovernmentTests.TaxCollection
+Statistics system initialized with max history size: 100
+Government established for Test City
+Collected 180 in taxes. New balance: 10180
+[       OK ] GovernmentTests.TaxCollection (0 ms)
+[ RUN      ] GovernmentTests.BudgetUpdate
+Statistics system initialized with max history size: 100
+Government established for Test City
+Collected 180 in taxes. New balance: 10180
+Updated budget. New treasury balance: 7180
+[       OK ] GovernmentTests.BudgetUpdate (0 ms)
+[ RUN      ] GovernmentTests.ServiceFunding
+Statistics system initialized with max history size: 100
+Government established for Test City
+Set education funding to 1000
+[       OK ] GovernmentTests.ServiceFunding (0 ms)
+[ RUN      ] GovernmentTests.CityServices
+Statistics system initialized with max history size: 100
+Government established for Test City
+Set education funding to 1000
+[       OK ] GovernmentTests.CityServices (0 ms)
+[ RUN      ] GovernmentTests.PolicyManagement
+Statistics system initialized with max history size: 100
+Government established for Test City
+Policy 'Green Initiative' set to active
+Policy 'Green Initiative' set to inactive
+[       OK ] GovernmentTests.PolicyManagement (0 ms)
+[ RUN      ] GovernmentTests.ApprovalRating
+Statistics system initialized with max history size: 100
+Government established for Test City
+Adjusted residential tax rate to 0.1
+[       OK ] GovernmentTests.ApprovalRating (0 ms)
+[ RUN      ] GovernmentTests.MultipleUpdates
+Statistics system initialized with max history size: 100
+Government established for Test City
+Collected 180 in taxes. New balance: 10180
+Updated budget. New treasury balance: 4180
+Added data point for treasury_balance: 4180
+Added data point for approval_rating: 48.5
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Collected 180 in taxes. New balance: 4360
+Updated budget. New treasury balance: -1640
+Added data point for treasury_balance: -1640
+Added data point for approval_rating: 48.5
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+Collected 180 in taxes. New balance: -1460
+Warning: Insufficient funds for education
+Warning: Insufficient funds for healthcare
+Warning: Insufficient funds for infrastructure
+Updated budget. New treasury balance: -4460
+Added data point for treasury_balance: -4460
+Added data point for approval_rating: 48.5
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+[       OK ] GovernmentTests.MultipleUpdates (0 ms)
+[ RUN      ] GovernmentTests.ServiceLevelImpact
+Statistics system initialized with max history size: 100
+Government established for Test City
+Set education funding to 100
+Set healthcare funding to 100
+Set education funding to 1000
+Set healthcare funding to 1000
+[       OK ] GovernmentTests.ServiceLevelImpact (0 ms)
+[ RUN      ] GovernmentTests.StatisticsTracking
+Statistics system initialized with max history size: 100
+Government established for Test City
+Collected 180 in taxes. New balance: 10180
+Added data point for treasury_balance: 7180
+Added data point for approval_rating: 53
+Added data point for commercial_tax_rate: 0.07
+Added data point for industrial_tax_rate: 0.06
+Added data point for residential_tax_rate: 0.05
+[       OK ] GovernmentTests.StatisticsTracking (0 ms)
+[----------] 11 tests from GovernmentTests (2 ms total)
+
+[----------] 7 tests from IndustrialTests
+[ RUN      ] IndustrialTests.Creation
+[       OK ] IndustrialTests.Creation (0 ms)
+[ RUN      ] IndustrialTests.Production
+Building constructed at (1,1)
+[       OK ] IndustrialTests.Production (0 ms)
+[ RUN      ] IndustrialTests.PollutionGeneration
+Building constructed at (1,1)
+[       OK ] IndustrialTests.PollutionGeneration (0 ms)
+[ RUN      ] IndustrialTests.ProductionEfficiency
+Building constructed at (1,1)
+[       OK ] IndustrialTests.ProductionEfficiency (0 ms)
+[ RUN      ] IndustrialTests.ResourceConsumption
+Building constructed at (1,1)
+[       OK ] IndustrialTests.ResourceConsumption (0 ms)
+[ RUN      ] IndustrialTests.WasteGeneration
+Building constructed at (1,1)
+[       OK ] IndustrialTests.WasteGeneration (0 ms)
+[ RUN      ] IndustrialTests.VisitorAcceptance
+Building visitor destroyed
+[       OK ] IndustrialTests.VisitorAcceptance (0 ms)
+[----------] 7 tests from IndustrialTests (0 ms total)
+
+[----------] 7 tests from LandmarkTests
+[ RUN      ] LandmarkTests.Creation
+[       OK ] LandmarkTests.Creation (0 ms)
+[ RUN      ] LandmarkTests.TourismValue
+Building constructed at (1,1)
+Landmark maintained. New condition: 0.8
+[       OK ] LandmarkTests.TourismValue (0 ms)
+[ RUN      ] LandmarkTests.VisitorCount
+Building constructed at (1,1)
+Landmark has 1000 visitors today, generating $5000 in revenue
+[       OK ] LandmarkTests.VisitorCount (0 ms)
+[ RUN      ] LandmarkTests.MaintenanceImpact
+Building constructed at (1,1)
+Landmark has 500 visitors today, generating $2500 in revenue
+Landmark maintained. New condition: 0.795
+Landmark has 794 visitors today, generating $3970 in revenue
+[       OK ] LandmarkTests.MaintenanceImpact (0 ms)
+[ RUN      ] LandmarkTests.ResourceConsumption
+Building constructed at (1,1)
+[       OK ] LandmarkTests.ResourceConsumption (0 ms)
+[ RUN      ] LandmarkTests.HistoricalValue
+[       OK ] LandmarkTests.HistoricalValue (0 ms)
+[ RUN      ] LandmarkTests.VisitorAcceptance
+Building visitor destroyed
+[       OK ] LandmarkTests.VisitorAcceptance (0 ms)
+[----------] 7 tests from LandmarkTests (0 ms total)
+
+[----------] 6 tests from PolicyMementoTests
+[ RUN      ] PolicyMementoTests.MementoCreation
+[       OK ] PolicyMementoTests.MementoCreation (0 ms)
+[ RUN      ] PolicyMementoTests.TimestampFormat
+[       OK ] PolicyMementoTests.TimestampFormat (1 ms)
+[ RUN      ] PolicyMementoTests.NullPolicyHandling
+[       OK ] PolicyMementoTests.NullPolicyHandling (0 ms)
+[ RUN      ] PolicyMementoTests.PolicyImplementation
+Applied tax effects for: Test Tax
+Implemented tax policy: Test Tax
+Applied zoning effects for: Test Zone
+Implemented zoning policy: Test Zone
+Applied environmental effects for: Test Env
+Implemented environmental policy: Test Env
+[       OK ] PolicyMementoTests.PolicyImplementation (0 ms)
+[ RUN      ] PolicyMementoTests.InvalidPolicyImplementation
+[       OK ] PolicyMementoTests.InvalidPolicyImplementation (0 ms)
+[ RUN      ] PolicyMementoTests.PartialMementoCreation
+[       OK ] PolicyMementoTests.PartialMementoCreation (0 ms)
+[----------] 6 tests from PolicyMementoTests (1 ms total)
+
+[----------] 8 tests from PolicyTests
+[ RUN      ] PolicyTests.TaxPolicyBasics
+Statistics system initialized with max history size: 100
+Government established for Test City
+[       OK ] PolicyTests.TaxPolicyBasics (0 ms)
+[ RUN      ] PolicyTests.TaxPolicyImplementation
+Statistics system initialized with max history size: 100
+Government established for Test City
+Applied tax effects for: Property Tax
+Implemented tax policy: Property Tax
+[       OK ] PolicyTests.TaxPolicyImplementation (0 ms)
+[ RUN      ] PolicyTests.ZoningPolicyBasics
+Statistics system initialized with max history size: 100
+Government established for Test City
+[       OK ] PolicyTests.ZoningPolicyBasics (0 ms)
+[ RUN      ] PolicyTests.ZoningPolicyImplementation
+Statistics system initialized with max history size: 100
+Government established for Test City
+Applied zoning effects for: Mixed Use
+Implemented zoning policy: Mixed Use
+[       OK ] PolicyTests.ZoningPolicyImplementation (0 ms)
+[ RUN      ] PolicyTests.EnvironmentalPolicyBasics
+Statistics system initialized with max history size: 100
+Government established for Test City
+[       OK ] PolicyTests.EnvironmentalPolicyBasics (0 ms)
+[ RUN      ] PolicyTests.EnvironmentalPolicyImplementation
+Statistics system initialized with max history size: 100
+Government established for Test City
+Applied environmental effects for: Clean Air
+Implemented environmental policy: Clean Air
+[       OK ] PolicyTests.EnvironmentalPolicyImplementation (0 ms)
+[ RUN      ] PolicyTests.PolicyEffects
+Statistics system initialized with max history size: 100
+Government established for Test City
+[       OK ] PolicyTests.PolicyEffects (0 ms)
+[ RUN      ] PolicyTests.PolicyWithdrawal
+Statistics system initialized with max history size: 100
+Government established for Test City
+Applied environmental effects for: Recycling
+Implemented environmental policy: Recycling
+Removed environmental effects for: Recycling
+Withdrawn environmental policy: Recycling
+[       OK ] PolicyTests.PolicyWithdrawal (0 ms)
+[----------] 8 tests from PolicyTests (0 ms total)
+
+[----------] 8 tests from ResourceManagerTests
+[ RUN      ] ResourceManagerTests.Initialization
+[       OK ] ResourceManagerTests.Initialization (0 ms)
+[ RUN      ] ResourceManagerTests.ResourceAddition
+[       OK ] ResourceManagerTests.ResourceAddition (0 ms)
+[ RUN      ] ResourceManagerTests.ResourceConsumption
+[       OK ] ResourceManagerTests.ResourceConsumption (0 ms)
+[ RUN      ] ResourceManagerTests.ResourceUpdate
+[       OK ] ResourceManagerTests.ResourceUpdate (0 ms)
+[ RUN      ] ResourceManagerTests.ResourceCapacity
+[       OK ] ResourceManagerTests.ResourceCapacity (0 ms)
+[ RUN      ] ResourceManagerTests.ResourceAvailability
+[       OK ] ResourceManagerTests.ResourceAvailability (0 ms)
+[ RUN      ] ResourceManagerTests.InvalidResource
+[       OK ] ResourceManagerTests.InvalidResource (0 ms)
+[ RUN      ] ResourceManagerTests.ResourceSetting
+[       OK ] ResourceManagerTests.ResourceSetting (0 ms)
+[----------] 8 tests from ResourceManagerTests (0 ms total)
+
+[----------] 11 tests from VisitorTests
+[ RUN      ] VisitorTests.InspectionVisitorResidential
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.InspectionVisitorResidential (0 ms)
+[ RUN      ] VisitorTests.InspectionVisitorCommercial
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.InspectionVisitorCommercial (0 ms)
+[ RUN      ] VisitorTests.InspectionVisitorIndustrial
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.InspectionVisitorIndustrial (0 ms)
+[ RUN      ] VisitorTests.InspectionVisitorLandmark
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.InspectionVisitorLandmark (0 ms)
+[ RUN      ] VisitorTests.MaintenanceVisitorResidential
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.MaintenanceVisitorResidential (0 ms)
+[ RUN      ] VisitorTests.MaintenanceVisitorCommercial
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.MaintenanceVisitorCommercial (0 ms)
+[ RUN      ] VisitorTests.MaintenanceVisitorIndustrial
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.MaintenanceVisitorIndustrial (0 ms)
+[ RUN      ] VisitorTests.MaintenanceVisitorLandmark
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.MaintenanceVisitorLandmark (0 ms)
+[ RUN      ] VisitorTests.MultipleMaintenance
+Residential building maintained. New condition: 1
+Residential Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Commercial building maintained. New condition: 1
+Commercial Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Industrial Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Landmark maintained. New condition: 1
+Landmark Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Residential building maintained. New condition: 1
+Residential Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Commercial building maintained. New condition: 1
+Commercial Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Industrial Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Landmark maintained. New condition: 1
+Landmark Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Residential building maintained. New condition: 1
+Residential Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Commercial building maintained. New condition: 1
+Commercial Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Industrial Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Landmark maintained. New condition: 1
+Landmark Building Maintenance Report:
+- Previous Condition: 100%
+- New Condition: 100%
+- Improvement: 0%
+
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.MultipleMaintenance (0 ms)
+[ RUN      ] VisitorTests.NullSafety
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.NullSafety (0 ms)
+[ RUN      ] VisitorTests.BuildingAcceptMethod
+Building visitor destroyed
+Building visitor destroyed
+[       OK ] VisitorTests.BuildingAcceptMethod (0 ms)
+[----------] 11 tests from VisitorTests (2 ms total)
+
+[----------] 7 tests from ZoneManagerTests
+[ RUN      ] ZoneManagerTests.ZoneCreation
+[       OK ] ZoneManagerTests.ZoneCreation (0 ms)
+[ RUN      ] ZoneManagerTests.ZoneFinding
+[       OK ] ZoneManagerTests.ZoneFinding (0 ms)
+[ RUN      ] ZoneManagerTests.BuildingPlacement
+[       OK ] ZoneManagerTests.BuildingPlacement (0 ms)
+[ RUN      ] ZoneManagerTests.FindCompatibleZone
+[       OK ] ZoneManagerTests.FindCompatibleZone (0 ms)
+[ RUN      ] ZoneManagerTests.ZoneRemoval
+[       OK ] ZoneManagerTests.ZoneRemoval (0 ms)
+[ RUN      ] ZoneManagerTests.ZoneCapacity
+[       OK ] ZoneManagerTests.ZoneCapacity (0 ms)
+[ RUN      ] ZoneManagerTests.ZoneUpdate
+Building constructed at (1,1)
+Residential satisfaction updated: 100%
+[       OK ] ZoneManagerTests.ZoneUpdate (0 ms)
+[----------] 7 tests from ZoneManagerTests (0 ms total)
+
+[----------] 11 tests from ZoneTests
+[ RUN      ] ZoneTests.Creation
+[       OK ] ZoneTests.Creation (0 ms)
+[ RUN      ] ZoneTests.BuildingPlacement
+[       OK ] ZoneTests.BuildingPlacement (0 ms)
+[ RUN      ] ZoneTests.BuildingCapacity
+[       OK ] ZoneTests.BuildingCapacity (0 ms)
+[ RUN      ] ZoneTests.BuildingRemoval
+[       OK ] ZoneTests.BuildingRemoval (0 ms)
+[ RUN      ] ZoneTests.ZoneUpdate
+Building constructed at (1,1)
+Residential satisfaction updated: 100%
+[       OK ] ZoneTests.ZoneUpdate (0 ms)
+[ RUN      ] ZoneTests.ZoneMaintenance
+Building constructed at (1,1)
+Residential building maintained. New condition: 0.7
+[       OK ] ZoneTests.ZoneMaintenance (0 ms)
+[ RUN      ] ZoneTests.VisitorPattern
+Building visitor destroyed
+[       OK ] ZoneTests.VisitorPattern (0 ms)
+[ RUN      ] ZoneTests.BuildingPlacementValidation
+[       OK ] ZoneTests.BuildingPlacementValidation (0 ms)
+[ RUN      ] ZoneTests.BuildingOverlap
+[       OK ] ZoneTests.BuildingOverlap (0 ms)
+[ RUN      ] ZoneTests.ZoneCapacityChecks
+[       OK ] ZoneTests.ZoneCapacityChecks (0 ms)
+[ RUN      ] ZoneTests.ValidPositions
+[       OK ] ZoneTests.ValidPositions (0 ms)
+[----------] 11 tests from ZoneTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 100 tests from 14 test suites ran. (13 ms total)
+[  PASSED  ] 100 tests.
